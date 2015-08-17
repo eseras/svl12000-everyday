@@ -2,7 +2,7 @@
 DAY_LEN = 200
 
 words = []
-(1..12).each do |i|
+(8..12).each do |i|
   puts "reading #{i}/#{12}"
   file = File.read("levels.level#{i}.csv")
   puts "---- rows: #{file.count("\n")}"
@@ -15,6 +15,9 @@ words = []
     # p "#{a}; #{b}"
   end
 end
+
+puts "creating dir"
+`rm -rf days; mkdir -p days`
 
 len = words.size / DAY_LEN
 (0...len).each do |i|
